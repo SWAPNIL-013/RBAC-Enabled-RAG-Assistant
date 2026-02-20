@@ -1,44 +1,72 @@
-Internal Knowledge Assistant with Role-Based Access Control
-Overview
+# Internal Knowledge Assistant with Role-Based Access Control
 
-Designed and implemented a Retrieval-Augmented Generation (RAG) based internal chatbot that enables secure, role-specific access to organizational knowledge. The system enforces fine-grained access control to ensure users only retrieve information relevant to their department.
+## Overview
 
-Key Features
+Designed and implemented a Retrieval-Augmented Generation (RAG) based internal chatbot that enables secure, role-specific access to organizational knowledge.  
+The system enforces fine-grained access control, ensuring users retrieve only the information permitted for their assigned department.
 
-Role-Based Access Control (RBAC) across departments:
+---
 
-Engineering
+## Problem Statement
 
-Finance
+Organizations require internal AI assistants that provide accurate knowledge retrieval while maintaining strict data boundaries across departments.  
+This project simulates an enterprise-grade internal chatbot capable of context-aware response generation with enforced role-based access policies.
 
-HR
+---
 
-Marketing
+## Key Features
 
-General Access
+### Role-Based Access Control (RBAC)
+Access restrictions implemented across departments:
+- Engineering  
+- Finance  
+- HR  
+- Marketing  
+- General  
 
-Secure authentication using HTTP Basic Authentication via FastAPI
+### Secure Authentication
+- HTTP Basic Authentication using FastAPI  
+- User-role validation before query execution  
 
-Document ingestion and vector indexing for semantic search
+### Retrieval-Augmented Generation Pipeline
+- Document ingestion and preprocessing  
+- Text chunking and embedding generation  
+- Vector indexing for semantic similarity search  
+- Context-aware response synthesis using LLMs  
 
-Retrieval-augmented response generation using LLMs
+### Scalable Architecture
+- Modular pipeline design  
+- Separation of authentication, retrieval, and generation layers  
+- Easily extendable to additional departments or data sources  
 
-Modular architecture for scalable knowledge integration
+---
 
-Tech Stack
+## Tech Stack
 
-FastAPI
+- Python  
+- FastAPI  
+- LangChain  
+- Vector Database (Qdrant)  
+- LLM + Embeddings  
+- Role-based filtering middleware  
 
-Python
+---
 
-Vector Database (e.g., FAISS / Chroma)
+## System Workflow
 
-LLM + Embeddings
+1. User authentication via HTTP Basic Auth  
+2. Role validation and access control enforcement  
+3. Query embedding generation  
+4. Role-filtered vector similarity search  
+5. Context retrieval  
+6. LLM-based response generation  
 
-Role-based filtering logic
+---
 
-Problem Statement
+## Outcome
 
-Organizations often require internal knowledge assistants that respect departmental data boundaries. This project simulates an enterprise-grade internal chatbot capable of retrieving context-aware answers while enforcing strict role-based access policies.
-
-Notice what disappeared?
+Developed a secure internal AI assistant that demonstrates:
+- Controlled information access
+- Semantic search capabilities
+- Production-style backend architecture
+- Enterprise-aligned security considerations
